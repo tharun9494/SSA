@@ -1,0 +1,1005 @@
+/* ==========================================================================
+   Office Page Stylesheet - Redesigned in the style of Cadence Architects
+   ========================================================================== */
+
+.office-page-container {
+  width: 100%;
+  background-color: #fafafa;
+  overflow-x: hidden;
+}
+
+
+
+/* ==========================================================================
+   Section Hero Headers (.sectionImgHeadWrapper)
+   ========================================================================== */
+.office-section {
+  width: 100%;
+  padding-bottom: var(--spacing-lg, 5rem);
+}
+
+.sectionImgHeadWrapper {
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  min-height: 350px;
+  max-height: 480px;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.sectionImgHeadheight {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f7eae4 0%, #ffdbe6 100%);
+  position: relative;
+}
+
+.sectionImgheadBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.95;
+  transition: transform 12s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.sectionImgHeadWrapper:hover .sectionImgheadBg {
+  transform: scale(1.05);
+}
+
+.sectionImghead-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.55) 100%);
+  z-index: 1;
+}
+
+.sectionImgHeading {
+  position: absolute;
+  bottom: 12%;
+  left: 8%;
+  z-index: 2;
+}
+
+.sectionImgHeading p,
+.sectionImgHeading h2 {
+  font-family: var(--font-primary), sans-serif;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-weight: 300;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 0.9;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   Profile Section Styling
+   ========================================================================== */
+.profile-content {
+  padding: 0 8%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.profile-content .profile-lead {
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  color: #111;
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 90%;
+  text-align: justify;
+  letter-spacing: -0.01em;
+}
+
+.profile-content .profile-body-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 1rem;
+}
+
+.profile-content p.profile-desc {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.9;
+  text-align: justify;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   People Section & Founders Grid
+   ========================================================================== */
+.people-content {
+  padding: 0 8%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.team-section-category-title {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #111;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  margin-top: 5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.founders-design-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  margin-bottom: 6rem;
+}
+
+.founder-design-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.founder-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+}
+
+.founder-design-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.founder-image-wrapper:hover .founder-design-image {
+  filter: grayscale(0%);
+  transform: scale(1.04);
+}
+
+/* Translucent Gradient Overlay matching Cadence */
+.team-overlay-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(162, 219, 255, 0.75) 0%, rgba(255, 187, 210, 0.75) 100%);
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 2;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.founder-image-wrapper:hover .team-overlay-gradient {
+  opacity: 1;
+}
+
+.founder-hover-icons {
+  display: flex;
+  gap: 1.5rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition-delay: 0.1s;
+}
+
+.founder-image-wrapper:hover .founder-hover-icons {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.founder-hover-icons a {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.founder-hover-icons a:hover {
+  transform: scale(1.15);
+  background: var(--color-primary, #a32617);
+  color: #fff;
+}
+
+/* Caption formatting */
+.founder-caption {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.founder-design-name {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.founder-design-card:hover .founder-design-name {
+  color: var(--color-primary, #a32617);
+}
+
+.founder-design-role {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #777;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Full Screen Founders Detail Pane (Modal Redesign)
+   ========================================================================== */
+.founder-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.98);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.founder-modal-content {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  position: relative;
+  background: #fff;
+}
+
+.founder-modal-close {
+  position: fixed;
+  top: 2.5rem;
+  right: 2.5rem;
+  background: #f5f5f5;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  cursor: pointer;
+  z-index: 2010;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.founder-modal-close:hover {
+  background: #111;
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.founder-modal-left {
+  padding: 8rem 6rem 5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.founder-modal-left h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  color: #111;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.founder-modal-left .modal-role {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--color-primary, #a32617);
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.founder-modal-left .modal-creds {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.founder-modal-left .modal-bio {
+  margin-bottom: 3rem;
+}
+
+.founder-modal-left .modal-bio p {
+  font-size: 1.05rem;
+  line-height: 1.95;
+  color: #444;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.founder-modal-left .modal-contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 2rem;
+  margin-top: auto;
+}
+
+.founder-modal-left .modal-email {
+  font-size: 0.95rem;
+  color: #111;
+  font-weight: 600;
+}
+
+.founder-modal-left .modal-email a {
+  position: relative;
+}
+
+.founder-modal-left .modal-email a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #111;
+  transition: width 0.3s ease;
+}
+
+.founder-modal-left .modal-email a:hover::after {
+  width: 0;
+}
+
+.founder-modal-left .modal-socials {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.founder-modal-left .modal-socials a {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.founder-modal-left .modal-socials a:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  transform: translateY(-3px);
+}
+
+.founder-modal-right {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  right: 0;
+  background-color: #eaeaea;
+  overflow: hidden;
+}
+
+.founder-modal-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 1s ease;
+}
+
+.founder-modal-overlay:hover .founder-modal-right img {
+  filter: grayscale(0%);
+}
+
+/* ==========================================================================
+   Team Category Grids (Architecture, Structural, MEP)
+   ========================================================================== */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.person-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.person-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+.person-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: grayscale(100%);
+  border-radius: 4px;
+  margin-bottom: 1.2rem;
+  transition: all 0.5s ease;
+}
+
+.person-card:hover .person-image {
+  filter: grayscale(0%);
+}
+
+.person-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 0.3rem;
+}
+
+.person-role {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-primary, #a32617);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.person-exp {
+  font-size: 0.8rem;
+  color: #777;
+  font-style: italic;
+  margin-bottom: 0.3rem;
+}
+
+.person-creds-small {
+  font-size: 0.75rem;
+  color: #888;
+  line-height: 1.4;
+  margin-top: 0.3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  padding-top: 0.5rem;
+}
+
+/* ==========================================================================
+   Awards Section Redesign
+   ========================================================================== */
+.awards-content {
+  padding: 0 8%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.awards-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  margin-bottom: 5rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 5rem;
+}
+
+.awards-logo-grid img {
+  width: 100%;
+  max-width: 160px;
+  margin: 0 auto;
+  filter: grayscale(100%);
+  opacity: 0.35;
+  transition: all 0.4s ease;
+}
+
+.awards-logo-grid img:hover {
+  filter: grayscale(0%);
+  opacity: 0.95;
+  transform: scale(1.05);
+}
+
+.awards-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 5rem;
+}
+
+.award-item {
+  display: flex;
+  gap: 2.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  padding-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.award-item:hover {
+  border-bottom-color: var(--color-primary, #a32617);
+}
+
+.award-year {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary, #a32617);
+  letter-spacing: -0.01em;
+  font-family: var(--font-mono), monospace;
+  line-height: 1;
+}
+
+.award-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.award-title {
+  font-size: 1.05rem;
+  color: #111;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.award-subtitle {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* ==========================================================================
+   Publications Section Redesign
+   ========================================================================== */
+.publications-content {
+  padding: 0 8%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.magazines-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.magazine-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: #eaeaea;
+  aspect-ratio: 3 / 4;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.magazine-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.magazine-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.magazine-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Expanding Publications Drawer style */
+.drawer-container {
+  width: 100%;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.drawer-toggle-btn {
+  background: transparent;
+  border: 1px solid #111;
+  padding: 1rem 2.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  border-radius: 30px;
+  color: #111;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.drawer-toggle-btn:hover {
+  background: #111;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.drawer-toggle-btn span {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.drawer-content-expanded {
+  margin-top: 3rem;
+  padding: 3rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+  text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.drawer-content-expanded h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #111;
+}
+
+.drawer-content-expanded ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 3rem;
+  padding: 0;
+}
+
+.drawer-content-expanded li {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.drawer-content-expanded li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary, #a32617);
+}
+
+/* ==========================================================================
+   Events Section Redesign
+   ========================================================================== */
+.events-content {
+  padding: 6rem 8%;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.events-title-wrapper {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.events-title-wrapper h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #111;
+}
+
+.events-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.events-logo-grid img {
+  width: 100%;
+  max-width: 180px;
+  margin: 0 auto;
+  filter: grayscale(100%);
+  opacity: 0.35;
+  transition: all 0.4s ease;
+}
+
+.events-logo-grid img:hover {
+  opacity: 0.95;
+  filter: grayscale(0%);
+}
+
+/* ==========================================================================
+   Responsive Media Queries
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .sub-nav {
+    padding: 1rem 2rem;
+    gap: 1.8rem;
+  }
+  .profile-content {
+    padding: 0 4%;
+  }
+  .people-content {
+    padding: 0 4%;
+  }
+  .awards-content {
+    padding: 0 4%;
+  }
+  .publications-content {
+    padding: 0 4%;
+  }
+  .events-content {
+    padding: 4rem 4%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .profile-content .profile-body-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .founders-design-grid {
+    gap: 2.5rem;
+  }
+  .founder-modal-overlay {
+    background: rgba(10, 10, 10, 0.6) !important;
+    padding: 1.5rem 1rem !important;
+    align-items: flex-start !important;
+    overflow-y: scroll !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .founder-modal-content {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    max-width: 580px !important;
+    margin: 1.5rem auto !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25) !important;
+  }
+  .founder-modal-right {
+    height: 38vh !important;
+    order: -1 !important;
+    position: relative !important;
+  }
+  .founder-modal-left {
+    padding: 3rem 1.8rem 2.5rem 1.8rem !important;
+  }
+  .founder-modal-close {
+    position: absolute !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    width: 42px !important;
+    height: 42px !important;
+  }
+  .people-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .awards-logo-grid,
+  .events-logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .awards-list {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .magazines-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .drawer-content-expanded ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sub-nav {
+    top: 60px; /* Shifted for mobile headers */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    padding: 0.8rem 1rem;
+  }
+  .profile-content .profile-lead {
+    max-width: 100%;
+  }
+  .founders-design-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+  .founder-design-name {
+    font-size: 1.05rem !important;
+  }
+  .founder-design-role {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.08em;
+  }
+  .founder-caption {
+    margin-top: 1rem !important;
+    padding: 0 0.2rem;
+  }
+  .people-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+  .person-card {
+    padding: 0.6rem !important;
+  }
+  .person-image {
+    margin-bottom: 0.8rem !important;
+  }
+  .person-name {
+    font-size: 0.95rem !important;
+  }
+  .person-role {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.06em;
+  }
+  .awards-logo-grid,
+  .events-logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .magazines-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sectionImgHeadWrapper {
+    height: 35vh;
+  }
+  .drawer-content-expanded {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .founders-design-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+  .founder-design-name {
+    font-size: 0.95rem !important;
+  }
+  .founder-design-role {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.04em;
+  }
+  .founder-hover-icons {
+    gap: 0.6rem !important;
+  }
+  .founder-hover-icons a {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .founder-hover-icons a svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  
+  .people-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+  .person-card {
+    padding: 0.5rem !important;
+  }
+  .person-name {
+    font-size: 0.9rem !important;
+  }
+  .person-role {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.04em;
+  }
+  .person-exp,
+  .person-creds-small {
+    display: none !important; /* Hide credentials and experience on micro viewports for visual purity */
+  }
+  
+  .awards-logo-grid,
+  .events-logo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+  .magazines-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.8rem !important;
+  }
+}
+
+/* ==========================================================================
+   Mobile-Only Swipable Touch Sub-Navigation Styling
+   ========================================================================== */
+.mobile-sub-nav {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .mobile-sub-nav {
+    display: flex;
+    position: sticky;
+    top: 90px; /* Sits right beneath the mobile header */
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 900;
+    padding: 0.8rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.8rem;
+    justify-content: flex-start;
+  }
+  
+  /* Hide scrollbar tracks for visual purity */
+  .mobile-sub-nav::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .mobile-sub-nav-link {
+    font-size: 0.95rem;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    color: #888888;
+    font-weight: 400;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    transition: color 0.3s ease;
+  }
+  
+  .mobile-sub-nav-link.active {
+    color: #111111;
+    font-weight: 500;
+  }
+}
