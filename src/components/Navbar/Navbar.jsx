@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import logo from '../../assets/logo.png';
+import logoMark from '../../assets/logo-mark.png';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -70,9 +70,10 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${navClass} ${subnavClass}`}>
       <div className="navbar-container">
-        {/* Logo */}
-        <NavLink to="/" className="nav-brand">
-          <img src={logo} alt="S.S.Associates" className="brand-logo" style={{ height: '90px', objectFit: 'contain' }} />
+        {/* Logo + wordmark side by side */}
+        <NavLink to="/" className="nav-brand" aria-label="SS Associates">
+          <img src={logoMark} alt="" className="brand-logo" />
+          <span className="brand-name">SS ASSOCIATES</span>
         </NavLink>
 
         {/* Desktop & Mobile Menu Columns */}

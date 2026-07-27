@@ -142,7 +142,7 @@
   gap: 0.5rem;
   font-size: 0.8rem;
   color: #888888;
-  font-family: var(--font-mono), monospace;
+  font-family: var(--font-primary), sans-serif;
   letter-spacing: 0.05em;
   text-transform: lowercase;
 }
@@ -580,7 +580,7 @@
 }
 
 .item-number {
-  font-family: var(--font-mono), monospace;
+  font-family: var(--font-primary), sans-serif;
   font-size: 0.95rem;
   color: var(--color-primary, #a32617);
   font-weight: 600;
@@ -712,7 +712,7 @@
 }
 
 .success-card-coordinates {
-  font-family: var(--font-mono), monospace;
+  font-family: var(--font-primary), sans-serif;
   font-size: 0.8rem;
   letter-spacing: 0.05em;
   text-transform: lowercase;
@@ -783,7 +783,7 @@
 }
 
 .handwritten-signature {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary), sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   color: #ffffff;

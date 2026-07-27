@@ -49,11 +49,13 @@
   padding: 1.2rem 0;
 }
 
-/* Logo Styling */
+/* Logo + wordmark side by side — logo is the core, text is medium & centered */
 .nav-brand {
   display: flex;
-  align-items: center;
+  align-items: center; /* vertically center text with logo */
+  gap: 0.75rem;
   transition: transform var(--transition-fast);
+  z-index: 1001;
 }
 
 .nav-brand:hover {
@@ -61,13 +63,46 @@
 }
 
 .brand-logo {
-  height: 90px !important;
-  transition: all var(--transition-normal);
+  height: 110px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: height var(--transition-normal);
+}
+
+.brand-name {
+  font-family: var(--font-primary);
+  font-size: 1.15rem; /* medium size */
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--color-primary); /* brand red — matches logo */
+}
+
+.navbar.solid .brand-name {
+  color: var(--color-primary);
+}
+
+.navbar.transparent .brand-name {
+  color: #ffffff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
 
 @media (max-width: 768px) {
   .brand-logo {
-    height: 70px !important;
+    height: 78px;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+  }
+
+  .nav-brand {
+    gap: 0.55rem;
   }
 }
 
@@ -332,5 +367,10 @@
   .navbar.transparent .navbar-toggler.open,
   .navbar.transparent:has(.nav-links.open) .nav-brand {
     color: #000000;
+  }
+
+  .navbar.transparent:has(.nav-links.open) .brand-name {
+    color: var(--color-primary);
+    text-shadow: none;
   }
 }
