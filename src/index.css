@@ -27,7 +27,7 @@
   --transition-normal: 0.5s cubic-bezier(0.25, 1, 0.25, 1);
   --transition-slow: 1s cubic-bezier(0.25, 1, 0.25, 1);
   
-  --nav-height: 140px;
+  --nav-height: 76px;
 }
 
 * {

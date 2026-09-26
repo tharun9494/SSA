@@ -1,0 +1,375 @@
+/* ==========================================================================
+   Support Page Stylesheet - Architectural Aesthetic
+   ========================================================================== */
+
+.support-page {
+  width: 100%;
+  background-color: #fafafa;
+  min-height: 100vh;
+  padding-top: var(--nav-height, 76px);
+  color: var(--color-text, #1c1c1c);
+}
+
+.support-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 6vw;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.support-hero {
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 4.5rem 6vw 4rem;
+}
+
+.support-hero-content {
+  max-width: 860px;
+}
+
+.support-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-primary, #a32617);
+  margin-bottom: 1rem;
+}
+
+.support-title {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #111111;
+  margin-bottom: 1.5rem;
+}
+
+.support-lead {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  color: #555555;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ==========================================================================
+   Channels Section
+   ========================================================================== */
+.support-channels-section {
+  padding: 4rem 0 3rem;
+}
+
+.channels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+}
+
+.channel-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 4px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.channel-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(163, 38, 23, 0.3);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+}
+
+.channel-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  background-color: rgba(163, 38, 23, 0.06);
+  color: var(--color-primary, #a32617);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
+
+.channel-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 0.5rem;
+}
+
+.channel-desc {
+  font-size: 0.88rem;
+  color: #666666;
+  line-height: 1.55;
+  margin-bottom: 1.2rem;
+}
+
+.channel-contact {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111111;
+  margin-top: auto;
+  margin-bottom: 0.8rem;
+}
+
+.channel-action-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary, #a32617);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: gap 0.2s ease;
+}
+
+.channel-action-link:hover {
+  gap: 0.5rem;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Main Layout: Form + FAQs
+   ========================================================================== */
+.support-main-section {
+  padding: 3rem 0 6rem;
+}
+
+.support-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Left: Form Wrapper */
+.support-form-wrapper {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 4px;
+  padding: 3rem;
+}
+
+.form-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 0.6rem;
+}
+
+.form-header p {
+  font-size: 0.92rem;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.support-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #333333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  background-color: #fafafa;
+  font-family: var(--font-primary);
+  font-size: 0.92rem;
+  color: #111111;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary, #a32617);
+  background-color: #ffffff;
+}
+
+.support-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: var(--color-primary, #a32617);
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  padding: 1rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.support-submit-btn:hover {
+  background-color: #8b1e10;
+  transform: translateY(-2px);
+}
+
+.support-success-card {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.success-icon {
+  color: #10b981;
+  margin-bottom: 1.2rem;
+}
+
+.support-success-card h3 {
+  font-size: 1.5rem;
+  color: #111111;
+  margin-bottom: 0.6rem;
+}
+
+.support-success-card p {
+  color: #666666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto 1.8rem;
+}
+
+.reset-form-btn {
+  background: none;
+  border: 1px solid var(--color-primary, #a32617);
+  color: var(--color-primary, #a32617);
+  padding: 0.75rem 1.4rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.reset-form-btn:hover {
+  background-color: var(--color-primary, #a32617);
+  color: #ffffff;
+}
+
+/* Right: FAQs */
+.support-faq-wrapper {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 4px;
+  padding: 3rem;
+}
+
+.faq-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 0.6rem;
+}
+
+.faq-header p {
+  font-size: 0.92rem;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  border: 1px solid #ebebeb;
+  border-radius: 2px;
+  transition: border-color 0.25s ease;
+}
+
+.faq-item.active {
+  border-color: rgba(163, 38, 23, 0.4);
+}
+
+.faq-question-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.4rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  gap: 1rem;
+}
+
+.faq-q-text {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: #111111;
+  line-height: 1.4;
+}
+
+.faq-toggle-icon {
+  color: var(--color-primary, #a32617);
+  flex-shrink: 0;
+}
+
+.faq-answer-box {
+  padding: 0 1.4rem 1.4rem;
+  font-size: 0.9rem;
+  color: #555555;
+  line-height: 1.65;
+  border-top: 1px solid #f2f2f2;
+  padding-top: 1rem;
+}
+
+@media (max-width: 991px) {
+  .support-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .support-form-wrapper,
+  .support-faq-wrapper {
+    padding: 2rem 1.5rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

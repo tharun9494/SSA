@@ -7,11 +7,11 @@ const XIcon = ({ size = 20 }) => (
 );
 
 const projectsData = [
-  // RESIDENTIAL
+  // RESIDENTIAL & APARTMENTS
   {
     id: 1,
     title: 'Narrow House',
-    category: 'RESIDENTIAL',
+    category: 'RESIDENTIAL & APARTMENTS',
     location: 'Anantapur',
     year: 'Feb 2024',
     status: 'Completed',
@@ -22,7 +22,7 @@ const projectsData = [
   {
     id: 2,
     title: 'Brother’s House',
-    category: 'RESIDENTIAL',
+    category: 'RESIDENTIAL & APARTMENTS',
     location: 'Anantapur',
     year: 'Nov 2023',
     status: 'Ongoing',
@@ -33,7 +33,7 @@ const projectsData = [
   {
     id: 3,
     title: 'Luxury Villas',
-    category: 'RESIDENTIAL',
+    category: 'RESIDENTIAL & APARTMENTS',
     location: 'Anantapur',
     year: 'Jun 2023',
     status: 'Ongoing',
@@ -44,7 +44,7 @@ const projectsData = [
   {
     id: 4,
     title: 'Curved Elevation Villa',
-    category: 'RESIDENTIAL',
+    category: 'RESIDENTIAL & APARTMENTS',
     location: 'Anantapur',
     year: 'Nov 2024',
     status: 'Ongoing',
@@ -55,7 +55,7 @@ const projectsData = [
   {
     id: 5,
     title: 'Fluidic Form Residence',
-    category: 'RESIDENTIAL',
+    category: 'RESIDENTIAL & APARTMENTS',
     location: 'Anantapur',
     year: 'Feb 2025',
     status: 'Ongoing',
@@ -66,7 +66,7 @@ const projectsData = [
   {
     id: 6,
     title: 'Curvilinear Residence',
-    category: 'RESIDENTIAL',
+    category: 'RESIDENTIAL & APARTMENTS',
     location: 'Anantapur',
     year: 'Dec 2025',
     status: 'Ongoing',
@@ -77,7 +77,7 @@ const projectsData = [
   {
     id: 7,
     title: 'Guntakal Residence',
-    category: 'RESIDENTIAL',
+    category: 'RESIDENTIAL & APARTMENTS',
     location: 'Guntakal',
     year: 'Dec 2025',
     status: 'Ongoing',
@@ -86,11 +86,11 @@ const projectsData = [
     image: 'https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&q=80&w=800'
   },
 
-  // COMMERCIAL
+  // COMMERCIAL & HEALTHCARE
   {
     id: 8,
     title: 'Bajaj Showroom',
-    category: 'COMMERCIAL',
+    category: 'COMMERCIAL & HEALTHCARE',
     location: 'Hindupur',
     year: 'Dec 2024',
     status: 'Completed',
@@ -101,7 +101,7 @@ const projectsData = [
   {
     id: 9,
     title: 'Khamma Bhavan Girls Hostel',
-    category: 'COMMERCIAL',
+    category: 'COMMERCIAL & HEALTHCARE',
     location: 'Anantapur',
     year: 'Jun 2023',
     status: 'Completed',
@@ -112,7 +112,7 @@ const projectsData = [
   {
     id: 10,
     title: 'Nandyal Function Hall',
-    category: 'COMMERCIAL',
+    category: 'COMMERCIAL & HEALTHCARE',
     location: 'Nandyal',
     year: 'Dec 2023',
     status: 'Completed',
@@ -123,7 +123,7 @@ const projectsData = [
   {
     id: 11,
     title: 'Malabar Gold Showroom',
-    category: 'COMMERCIAL',
+    category: 'COMMERCIAL & HEALTHCARE',
     location: 'Anantapur',
     year: 'Dec 2024',
     status: 'Completed',
@@ -134,7 +134,7 @@ const projectsData = [
   {
     id: 12,
     title: 'Ramesh Reddy Commercial Complex',
-    category: 'COMMERCIAL',
+    category: 'COMMERCIAL & HEALTHCARE',
     location: 'Anantapur',
     year: 'Jun 2025',
     status: 'Ongoing',
@@ -145,7 +145,7 @@ const projectsData = [
   {
     id: 13,
     title: 'Mr. Siva Prasad Gupta Commercial',
-    category: 'COMMERCIAL',
+    category: 'COMMERCIAL & HEALTHCARE',
     location: 'Anantapur',
     year: 'Dec 2024',
     status: 'Completed',
@@ -233,11 +233,11 @@ const projectsData = [
     image: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=800'
   },
 
-  // HOUSING & APARTMENTS
+  // HOUSING & APARTMENTS (Merged into RESIDENTIAL & APARTMENTS)
   {
     id: 21,
     title: 'Vijay Luxury Apartments',
-    category: 'HOUSING & APARTMENTS',
+    category: 'RESIDENTIAL & APARTMENTS',
     location: 'Anantapur',
     year: 'Feb 2025',
     status: 'Ongoing',
@@ -248,7 +248,7 @@ const projectsData = [
   {
     id: 22,
     title: 'Padmavati Apartments',
-    category: 'HOUSING & APARTMENTS',
+    category: 'RESIDENTIAL & APARTMENTS',
     location: 'Anantapur',
     year: 'Jun 2024',
     status: 'Ongoing',
@@ -259,7 +259,7 @@ const projectsData = [
   {
     id: 23,
     title: 'Sakaar Luxury Apartments',
-    category: 'HOUSING & APARTMENTS',
+    category: 'RESIDENTIAL & APARTMENTS',
     location: 'Anantapur',
     year: 'Mar 2024',
     status: 'Ongoing',
@@ -270,7 +270,7 @@ const projectsData = [
   {
     id: 24,
     title: 'Ashok Apartment Complex',
-    category: 'HOUSING & APARTMENTS',
+    category: 'RESIDENTIAL & APARTMENTS',
     location: 'Anantapur',
     year: 'Mar 2026',
     status: 'Ongoing',
@@ -281,7 +281,7 @@ const projectsData = [
   {
     id: 25,
     title: 'Dr. Jeelani Guntakal Apartments',
-    category: 'HOUSING & APARTMENTS',
+    category: 'RESIDENTIAL & APARTMENTS',
     location: 'Guntakal',
     year: 'Jun 2026',
     status: 'Ongoing',
@@ -336,11 +336,11 @@ const projectsData = [
     image: 'https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&q=80&w=800'
   },
 
-  // HEALTH CARE
+  // HEALTH CARE (Merged into COMMERCIAL & HEALTHCARE)
   {
     id: 30,
     title: 'Dr. Hemanthamani Hospital',
-    category: 'HEALTH CARE',
+    category: 'COMMERCIAL & HEALTHCARE',
     location: 'Anantapur',
     year: 'Mar 2024',
     status: 'Completed',
@@ -351,7 +351,7 @@ const projectsData = [
   {
     id: 31,
     title: 'Radha Srinivas Specialty Hospital',
-    category: 'HEALTH CARE',
+    category: 'COMMERCIAL & HEALTHCARE',
     location: 'Rayadurgam',
     year: 'Sep 2025',
     status: 'Ongoing',
@@ -413,12 +413,10 @@ const projectsData = [
 
 const categories = [
   'ALL',
-  'RESIDENTIAL',
-  'COMMERCIAL',
+  'RESIDENTIAL & APARTMENTS',
+  'COMMERCIAL & HEALTHCARE',
   'PUBLIC PROJECTS',
-  'HOUSING & APARTMENTS',
   'URBAN DESIGN',
-  'HEALTH CARE',
   'HOSPITALITY',
   'MASTER PLAN',
   'INTERIORS'
@@ -474,8 +472,12 @@ const Work = () => {
         </div>
       </header>
 
-      {/* Projects Grid */}
-      <motion.div className="work-grid" variants={containerVariants} key={selectedCategory}>
+      {/* Projects Grid: Tight spacing between photos */}
+      <motion.div 
+        className="work-grid" 
+        variants={containerVariants} 
+        key={selectedCategory}
+      >
         {filteredProjects.map((project) => (
           <motion.div 
             key={project.id} 
@@ -486,9 +488,9 @@ const Work = () => {
             <img src={project.image} alt={project.title} className="project-image" />
             <div className="project-overlay-gradient"></div>
             <div className="project-overlay">
+              <span className="project-category">{project.category}</span>
               <h3 className="project-title">{project.title}</h3>
-              <span className="project-category">{project.category} — {project.location}</span>
-              <span className="project-details-tag">{project.status} | {project.year}</span>
+              <span className="project-details-tag">{project.location} • {project.year} • {project.status}</span>
             </div>
           </motion.div>
         ))}

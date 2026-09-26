@@ -50,19 +50,19 @@ const XIcon = ({ size = 20 }) => (
 // Animation configurations
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 35 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] }
   }
 };
 
 const imageFadeVariants = {
   hidden: { opacity: 0, scale: 1.05 },
-  visible: { 
-    opacity: 1, 
-    scale: 1, 
-    transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] } 
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] }
   }
 };
 
@@ -161,9 +161,9 @@ const Contact = () => {
       {/* Premium Full-bleed Banner */}
       <div className="sectionImgHeadWrapper">
         <div className="sectionImgHeadheight">
-          <motion.img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" 
-            alt="SS Associates Studio Drafting Table" 
+          <motion.img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000"
+            alt="SS Associates Studio Drafting Table"
             className="sectionImgheadBg"
             variants={imageFadeVariants}
             initial="hidden"
@@ -173,10 +173,10 @@ const Contact = () => {
           <div className="sectionImghead-overlay"></div>
         </div>
         <div className="sectionImgHeading">
-          <motion.h2 
-            variants={fadeUpVariants} 
-            initial="hidden" 
-            whileInView="visible" 
+          <motion.h2
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
           >
             contact
@@ -187,9 +187,9 @@ const Contact = () => {
       {/* Grid Layout */}
       <div className="contact-grid-content">
         <div className="contact-columns-grid">
-          
+
           {/* Left Column: Details & Structured Channels */}
-          <motion.div 
+          <motion.div
             className="contact-details-column"
             variants={fadeUpVariants}
             initial="hidden"
@@ -203,12 +203,11 @@ const Contact = () => {
                 <span>14.6788° n, 77.5957° e | elev. 335m</span>
               </div>
             </div>
-            
+
             <div className="contact-address-block">
               <p className="firm-title">S.S. Associates</p>
               <p className="address-lines">
-                Lakshmi Ratna Towers<br />
-                D.No: 15/703, Opp. Jonna Iron Mart<br />
+                15/703, Above City Union Bank<br />
                 Kamalanagar, Anantapur<br />
                 Andhra Pradesh 515001
               </p>
@@ -217,9 +216,9 @@ const Contact = () => {
             {/* Structured Departmental Contacts */}
             <div className="departments-contact-stack">
               <h4 className="department-title-divider">departments</h4>
-              
+
               <div className="department-item">
-                <span className="dept-tag">general & projects</span>
+                <span className="dept-tag">Architectural Projects</span>
                 <span className="dept-lead">Ar. S.N. Sai Sanketh</span>
                 <div className="dept-links">
                   <a href="tel:+919542630670" className="dept-comms"><PhoneIcon size={12} /> +91 95426 30670</a>
@@ -228,7 +227,7 @@ const Contact = () => {
               </div>
 
               <div className="department-item">
-                <span className="dept-tag">structures & valuation</span>
+                <span className="dept-tag">Structural & Valuation</span>
                 <span className="dept-lead">Er. S. Sudhakar</span>
                 <div className="dept-links">
                   <a href="mailto:sudhakar@ssassociates.com" className="dept-comms"><MailIcon size={12} /> sudhakar@ssassociates.com</a>
@@ -259,24 +258,24 @@ const Contact = () => {
 
             {/* Premium Grayscale Map Embed */}
             <div className="map-embed-wrapper">
-              <iframe 
+              <iframe
                 title="S.S. Associates Anantapur Map Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3873.342930740925!2d77.5956799757657!3d14.678768079089531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb14ac5f9ab8a83%3A0xe54e634eeb8fb4a8!2sKamalanagar%2C%20Anantapur%2C%20Andhra%20Pradesh%20515001!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen="" 
-                loading="lazy" 
+                src="https://maps.google.com/maps?q=15/703,+Above+City+Union+Bank,+Kamalanagar,+Anantapur,+Andhra+Pradesh+515001&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
               <div className="map-glass-overlay">
                 <div className="map-overlay-content">
                   <MapPinIcon size={14} />
-                  <span>Kamalanagar, Anantapur</span>
-                  <a 
-                    href="https://maps.google.com/?q=Kamalanagar,+Anantapur,+Andhra+Pradesh+515001" 
-                    target="_blank" 
-                    rel="noreferrer" 
+                  <span>15/703, Above City Union Bank, Kamalanagar</span>
+                  <a
+                    href="https://maps.app.goo.gl/HceqbRbxvj4Ktr2c9"
+                    target="_blank"
+                    rel="noreferrer"
                     className="map-redirect-btn"
                   >
                     open maps
@@ -287,7 +286,7 @@ const Contact = () => {
           </motion.div>
 
           {/* Right Column: Interactive Form */}
-          <motion.div 
+          <motion.div
             className="contact-form-column"
             variants={fadeUpVariants}
             initial="hidden"
@@ -311,7 +310,7 @@ const Contact = () => {
                   </button>
                 ))}
               </div>
-              <motion.span 
+              <motion.span
                 key={activeCategory}
                 initial={{ opacity: 0, y: -5 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -320,54 +319,54 @@ const Contact = () => {
                 — {categoryHints[activeCategory]}
               </motion.span>
             </div>
-            
+
             <form className="contact-inquiry-form" onSubmit={handleSubmit}>
               <div className="contact-form-group">
-                <input 
-                  type="text" 
-                  className="contact-form-input" 
-                  placeholder="name" 
+                <input
+                  type="text"
+                  className="contact-form-input"
+                  placeholder="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  required 
+                  required
                 />
                 <span className="focus-border-line"></span>
               </div>
-              
+
               <div className="contact-form-group">
-                <input 
-                  type="email" 
-                  className="contact-form-input" 
-                  placeholder="email" 
+                <input
+                  type="email"
+                  className="contact-form-input"
+                  placeholder="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required 
+                  required
                 />
                 <span className="focus-border-line"></span>
               </div>
-              
+
               <div className="contact-form-group">
-                <input 
-                  type="text" 
-                  className="contact-form-input" 
-                  placeholder="subject (optional)" 
+                <input
+                  type="text"
+                  className="contact-form-input"
+                  placeholder="subject (optional)"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
                 />
                 <span className="focus-border-line"></span>
               </div>
-              
+
               <div className="contact-form-group">
-                <textarea 
-                  className="contact-form-input contact-form-textarea" 
-                  placeholder="message / project details" 
+                <textarea
+                  className="contact-form-input contact-form-textarea"
+                  placeholder="message / project details"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   required
                 ></textarea>
                 <span className="focus-border-line"></span>
               </div>
-              
+
               <button type="submit" className="contact-submit-btn">
                 <span>send message</span>
               </button>
@@ -377,7 +376,7 @@ const Contact = () => {
         </div>
 
         {/* Project Preparation Checklist Section (Interactive Accordion) */}
-        <motion.div 
+        <motion.div
           className="contact-checklist-section"
           variants={fadeUpVariants}
           initial="hidden"
@@ -395,8 +394,8 @@ const Contact = () => {
               const isOpen = openAccordion === index;
               return (
                 <div key={index} className={`accordion-item ${isOpen ? 'open' : ''}`}>
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className="accordion-header"
                     onClick={() => toggleAccordion(index)}
                   >
@@ -438,7 +437,7 @@ const Contact = () => {
       {/* Spectacular Submit Success Overlay */}
       <AnimatePresence>
         {isSubmitted && (
-          <motion.div 
+          <motion.div
             className="success-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -448,15 +447,15 @@ const Contact = () => {
             {/* Dark grid background overlay */}
             <div className="blueprint-grid-bg"></div>
 
-            <motion.div 
+            <motion.div
               className="success-card"
               initial={{ scale: 0.9, opacity: 0, y: 50 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 50 }}
               transition={{ delay: 0.1, duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
             >
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="success-close-btn"
                 onClick={handleResetForm}
                 aria-label="Close message overlay"
@@ -472,17 +471,17 @@ const Contact = () => {
               <div className="success-card-body">
                 <span className="success-status-tag">transmission received</span>
                 <h4 className="success-heading">inquiry registered</h4>
-                
+
                 <div className="architect-letter-wrapper">
                   <p className="letter-salutation">dear {name.toLowerCase()},</p>
                   <p className="letter-body">
-                    we have successfully received your inquiry regarding <strong>{activeCategory}</strong> projects. 
+                    we have successfully received your inquiry regarding <strong>{activeCategory}</strong> projects.
                     our multidisciplinary studio is compiling spatial bounds and structural files matching your initial overview.
                   </p>
                   <p className="letter-body">
                     a senior consulting engineer or project architect will contact you at <strong>{email.toLowerCase()}</strong> to schedule an introductory consultation.
                   </p>
-                  
+
                   <div className="letter-signature-block">
                     <p className="letter-closing">best regards,</p>
                     <p className="handwritten-signature">s.s. associates studio</p>
@@ -490,8 +489,8 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className="success-return-btn"
                   onClick={handleResetForm}
                 >

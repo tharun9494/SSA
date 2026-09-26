@@ -366,7 +366,7 @@ const imageFadeVariants = {
 };
 
 const Office = () => {
-  const [activeSection, setActiveSection] = useState('profile');
+  const [activeSection, setActiveSection] = useState('about');
   const [selectedMember, setSelectedMember] = useState(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -374,7 +374,7 @@ const Office = () => {
     const handleScroll = () => {
       if (window.innerWidth > 991) return;
 
-      const sections = ['profile', 'people', 'awards', 'publications', 'events'];
+      const sections = ['about', 'people', 'awards', 'publications', 'events'];
       const scrollPosition = window.scrollY + 130;
 
       sections.forEach(section => {
@@ -394,7 +394,8 @@ const Office = () => {
   }, []);
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
+    const targetId = (id === 'profile' ? 'about' : id);
+    const element = document.getElementById(targetId) || document.getElementById(id);
     if (element) {
       const offsetTop = element.getBoundingClientRect().top + window.scrollY - 120;
       window.scrollTo({ top: offsetTop, behavior: 'smooth' });
@@ -410,7 +411,7 @@ const Office = () => {
     >
       {/* Sub Navigation Bar */}
       <div className="mobile-sub-nav">
-        {['profile', 'people', 'awards', 'publications', 'events'].map(item => (
+        {['about', 'people', 'awards', 'publications', 'events'].map(item => (
           <button
             key={item}
             className={`mobile-sub-nav-link ${activeSection === item ? 'active' : ''}`}
@@ -422,14 +423,16 @@ const Office = () => {
       </div>
 
       {/* ==========================================
-         PROFILE SECTION
+         ABOUT SECTION
          ========================================== */}
-      <section id="profile" className="office-section">
+      <section id="about" className="office-section">
+        {/* Invisible anchor for backward compatibility */}
+        <div id="profile" style={{ position: 'relative', top: '-120px' }}></div>
         <div className="sectionImgHeadWrapper">
           <div className="sectionImgHeadheight">
             <motion.img
               src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=2000"
-              alt="SS Associates Office Profile"
+              alt="SS Associates Office About"
               className="sectionImgheadBg"
               variants={imageFadeVariants}
               initial="hidden"
@@ -445,7 +448,7 @@ const Office = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              Profile
+              About
             </motion.h2>
           </div>
         </div>
@@ -458,7 +461,7 @@ const Office = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            S S ASSOCIATES is a multidisciplinary firm with a diverse portfolio offering professional consulting services in Architecture, Structures, Urban Design, Construction Planning, and Valuation.
+            S S Associates is a multidisciplinary firm providing professional consultancy in Architecture, Urban Design, Planning, Structural Design, and Valuation.
           </motion.h3>
 
           <div className="profile-body-wrapper">
@@ -469,7 +472,7 @@ const Office = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              We support Public and Private sector clients in a diverse range of markets at every stage, from initial conceptualization and financial feasibility study to project completion and beyond. With over 40 years of structural engineering heritage combined with cutting-edge architectural vision, our work spans landmark public infrastructure, railway master planning, district administrative complexes, healthcare institutions, commercial centers, and bespoke residential developments.
+              Our approach is rooted in crafting bespoke architecture that emerges from a thoughtful understanding of people, place, climate, and context. We believe every project holds its own inherent potential, revealed through careful observation, collaboration, and design exploration.
             </motion.p>
             <motion.p
               className="profile-desc"
@@ -478,7 +481,7 @@ const Office = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              Our multidisciplinary team—comprising Senior Architects, Urban Designers, Structural Engineers, MEP Specialists, and Valuation Consultants—delivers end-to-end solutions rooted in sustainability, context sensitivity, and structural integrity.
+              Rather than applying a predetermined aesthetic, we shape environments that respond with clarity, purpose, and authenticity. Through the considered interplay of space, light, materiality, and landscape, we create architecture that enriches everyday life, evokes meaningful experiences, and endures beyond the moment.
             </motion.p>
           </div>
         </div>

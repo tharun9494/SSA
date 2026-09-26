@@ -6,7 +6,7 @@ import './Navbar.css';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('profile');
+  const [activeSection, setActiveSection] = useState('about');
   const location = useLocation();
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Navbar = () => {
     const handleScroll = () => {
       if (window.innerWidth <= 991) return; // Managed locally on mobile scrollable subnav
 
-      const sections = ['profile', 'people', 'awards', 'publications', 'events'];
+      const sections = ['about', 'people', 'awards', 'publications', 'events'];
       const scrollPosition = window.scrollY + 200; // Offset aligned with double-row navbar height
 
       sections.forEach(section => {
@@ -54,7 +54,8 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
+    const targetId = (id === 'profile' ? 'about' : id);
+    const element = document.getElementById(targetId) || document.getElementById(id);
     if (element) {
       const offset = window.innerWidth <= 991 ? 130 : 150;
       const offsetTop = element.getBoundingClientRect().top + window.scrollY - offset;
@@ -89,7 +90,7 @@ const Navbar = () => {
             {/* Embedded nested sub-navigation inside mobile drawer */}
             {isOfficePage && (
               <div className="mobile-drawer-sub-nav">
-                {['profile', 'people', 'awards', 'publications', 'events'].map(item => (
+                {['about', 'people', 'awards', 'publications', 'events'].map(item => (
                   <button
                     key={item}
                     className="mobile-drawer-sub-nav-link"
@@ -112,7 +113,7 @@ const Navbar = () => {
           {/* Conditional Sub-navigation rendering under main links (Desktop only) */}
           {isOfficePage && (
             <div className="navbar-sub-nav">
-              {['profile', 'people', 'awards', 'publications', 'events'].map(item => (
+              {['about', 'people', 'awards', 'publications', 'events'].map(item => (
                 <button
                   key={item}
                   className={`navbar-sub-nav-link ${activeSection === item ? 'active' : ''}`}

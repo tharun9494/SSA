@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 1rem 0; /* Let height adapt dynamically based on padding */
+  padding: 0.9rem 0; /* Elegant architectural spacing */
   transition: background-color var(--transition-normal), color var(--transition-normal), box-shadow var(--transition-normal), padding var(--transition-normal);
 }
 
@@ -49,21 +49,23 @@
   padding: 1.2rem 0;
 }
 
-/* Logo + wordmark side by side — logo is the core, text is medium & centered */
+/* Logo + wordmark side by side — perfectly centered and suitably scaled */
 .nav-brand {
-  display: flex;
+  display: inline-flex;
   align-items: center; /* vertically center text with logo */
-  gap: 0.75rem;
-  transition: transform var(--transition-fast);
+  gap: 0.85rem;
+  text-decoration: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
   z-index: 1001;
 }
 
 .nav-brand:hover {
-  transform: scale(1.02);
+  opacity: 0.9;
+  transform: scale(1.01);
 }
 
 .brand-logo {
-  height: 110px;
+  height: 42px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -75,11 +77,13 @@
   font-family: var(--font-primary);
   font-size: 1.15rem; /* medium size */
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1; /* Eliminates vertical offset for true center alignment */
   white-space: nowrap;
   color: var(--color-primary); /* brand red — matches logo */
+  display: inline-flex;
+  align-items: center;
 }
 
 .navbar.solid .brand-name {
@@ -93,16 +97,16 @@
 
 @media (max-width: 768px) {
   .brand-logo {
-    height: 78px;
+    height: 34px;
   }
 
   .brand-name {
     font-size: 0.95rem;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
   }
 
   .nav-brand {
-    gap: 0.55rem;
+    gap: 0.6rem;
   }
 }
 
