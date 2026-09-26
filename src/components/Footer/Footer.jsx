@@ -150,16 +150,7 @@ const Footer = () => {
                   <InstagramIcon size={18} />
                 </a>
                 <a 
-                  href="https://facebook.com" 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="social-icon-btn" 
-                  aria-label="Facebook"
-                >
-                  <FacebookIcon size={18} />
-                </a>
-                <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/sai-sanketh-40a43b88/" 
                   target="_blank" 
                   rel="noreferrer" 
                   className="social-icon-btn" 
@@ -168,7 +159,7 @@ const Footer = () => {
                   <LinkedinIcon size={18} />
                 </a>
                 <a 
-                  href="https://youtube.com" 
+                  href="https://www.youtube.com/user/sriramsanketh" 
                   target="_blank" 
                   rel="noreferrer" 
                   className="social-icon-btn" 

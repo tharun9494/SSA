@@ -1,7 +1,7 @@
 /* Page Container & Spacing Optimization — Full Width Edge-to-Edge with Matching 8px Spacing */
 .page-container,
 .work-page-container {
-  padding-top: calc(var(--nav-height) + 1.25rem);
+  padding-top: calc(var(--nav-height) + 2.5rem);
   padding-bottom: var(--spacing-lg);
   min-height: 100vh;
   width: 100%;
@@ -12,64 +12,57 @@
   box-sizing: border-box;
 }
 
-.page-header {
-  margin-bottom: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 0 4px;
-}
-
-.page-header h1 {
-  text-transform: uppercase;
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  margin: 0;
-}
-
-/* Filter Bar */
-.work-filter-bar {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  white-space: nowrap;
-  gap: 0.5rem 0.85rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.work-filter-bar::-webkit-scrollbar {
+/* Mobile-only Touch Sub-Navigation Styling matching Office page */
+.mobile-sub-nav {
   display: none;
 }
 
-.filter-btn {
-  flex-shrink: 0;
-  white-space: nowrap;
-  background: transparent;
-  border: none;
-  font-family: var(--font-primary), sans-serif;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #777;
-  padding: 0.4rem 0.75rem;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
+@media (max-width: 991px) {
+  .work-page-container {
+    padding-top: calc(var(--nav-height) + 0.5rem);
+  }
 
-.filter-btn:hover {
-  color: #111;
-}
+  .mobile-sub-nav {
+    display: flex;
+    position: sticky;
+    top: 76px; /* Sits beneath mobile header */
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 900;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
 
-.filter-btn.active {
-  color: #fff;
-  background: #111;
+  .mobile-sub-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-sub-nav-link {
+    font-size: 0.95rem;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    color: #888888;
+    font-weight: 400;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    transition: color 0.3s ease;
+  }
+
+  .mobile-sub-nav-link.active {
+    color: #111111;
+    font-weight: 500;
+  }
 }
 
 /* ==========================================================================

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Work.css';
 
@@ -21,9 +22,13 @@ import imgVijayApartments from '../../assets/RESIDENTIAL/6 vijay apartment.png';
 import imgSakaarLuxury from '../../assets/RESIDENTIAL/SAKAAR LUXURY.jpg';
 import imgJeelaniApartments from '../../assets/RESIDENTIAL/JEELANI APARTMENT.jpeg';
 
-// Real Project Images from src/assets/home_page_images
-import imgChittoorStation from '../../assets/home_page_images/3chittoor railway station.png';
-import imgForestOffice from '../../assets/home_page_images/6 forest office.jpg';
+// Real Project Images from src/assets/public_projects
+import imgAtpStation from '../../assets/public_projects/ATP railway station.jpg';
+import imgKadapaStation from '../../assets/public_projects/Kadapa railway station.jpeg';
+import imgChittoorStation from '../../assets/public_projects/chittoor railway station.png';
+import imgForestOffice from '../../assets/public_projects/forest office.jpg';
+import imgRaichurStation from '../../assets/public_projects/raichur railway station.jpeg';
+import imgYadgirStation from '../../assets/public_projects/yadgir.jpg';
 
 // Real Project Images from src/assets/URBAN_DESIGN
 import imgUnderFlyover from '../../assets/URBAN_DESIGN/UNDER FLYOVER.jpg';
@@ -36,11 +41,11 @@ const XIcon = ({ size = 20 }) => (
 );
 
 const projectsData = [
-  // RESIDENTIAL & APARTMENTS
+  // RESIDENTIAL
   {
     id: 1,
     title: 'Narrow House',
-    category: 'RESIDENTIAL & APARTMENTS',
+    category: 'RESIDENTIAL',
     location: 'Anantapur',
     year: 'Feb 2024',
     status: 'Completed',
@@ -51,7 +56,7 @@ const projectsData = [
   {
     id: 2,
     title: 'Brother’s House',
-    category: 'RESIDENTIAL & APARTMENTS',
+    category: 'RESIDENTIAL',
     location: 'Anantapur',
     year: 'Nov 2023',
     status: 'Ongoing',
@@ -62,7 +67,7 @@ const projectsData = [
   {
     id: 3,
     title: 'Luxury Villas',
-    category: 'RESIDENTIAL & APARTMENTS',
+    category: 'RESIDENTIAL',
     location: 'Anantapur',
     year: 'Jun 2023',
     status: 'Ongoing',
@@ -73,7 +78,7 @@ const projectsData = [
   {
     id: 4,
     title: 'Curved Elevation Villa',
-    category: 'RESIDENTIAL & APARTMENTS',
+    category: 'RESIDENTIAL',
     location: 'Anantapur',
     year: 'Nov 2024',
     status: 'Ongoing',
@@ -84,7 +89,7 @@ const projectsData = [
   {
     id: 5,
     title: 'Fluidic Form Residence',
-    category: 'RESIDENTIAL & APARTMENTS',
+    category: 'RESIDENTIAL',
     location: 'Anantapur',
     year: 'Feb 2025',
     status: 'Ongoing',
@@ -95,7 +100,7 @@ const projectsData = [
   {
     id: 6,
     title: 'Curvilinear Residence',
-    category: 'RESIDENTIAL & APARTMENTS',
+    category: 'RESIDENTIAL',
     location: 'Anantapur',
     year: 'Dec 2025',
     status: 'Ongoing',
@@ -106,7 +111,7 @@ const projectsData = [
   {
     id: 7,
     title: 'Guntakal Residence',
-    category: 'RESIDENTIAL & APARTMENTS',
+    category: 'RESIDENTIAL',
     location: 'Guntakal',
     year: 'Dec 2025',
     status: 'Ongoing',
@@ -204,7 +209,7 @@ const projectsData = [
     status: 'Ongoing',
     area: 'Amrit Bharat Scheme',
     client: 'South Central Railways / Indian Railways',
-    image: 'https://images.unsplash.com/photo-1541427468627-a89a96e5ca1d?auto=format&fit=crop&q=80&w=800'
+    image: imgAtpStation
   },
   {
     id: 16,
@@ -226,7 +231,7 @@ const projectsData = [
     status: 'Ongoing',
     area: 'Amrit Bharat Scheme',
     client: 'South Central Railways / Indian Railways',
-    image: 'https://images.unsplash.com/photo-1515165562839-978bbcf18277?auto=format&fit=crop&q=80&w=800'
+    image: imgKadapaStation
   },
   {
     id: 18,
@@ -237,7 +242,7 @@ const projectsData = [
     status: 'Ongoing',
     area: 'Amrit Bharat Scheme',
     client: 'Indian Railways',
-    image: 'https://images.unsplash.com/photo-1541427468627-a89a96e5ca1d?auto=format&fit=crop&q=80&w=800'
+    image: imgYadgirStation
   },
   {
     id: 19,
@@ -248,7 +253,7 @@ const projectsData = [
     status: 'Ongoing',
     area: 'Amrit Bharat Scheme',
     client: 'Indian Railways',
-    image: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=800'
+    image: imgRaichurStation
   },
   {
     id: 20,
@@ -262,11 +267,11 @@ const projectsData = [
     image: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=800'
   },
 
-  // HOUSING & APARTMENTS (Merged into RESIDENTIAL & APARTMENTS)
+  // APARTMENTS & HOUSING (RESIDENTIAL)
   {
     id: 21,
     title: 'Vijay Luxury Apartments',
-    category: 'RESIDENTIAL & APARTMENTS',
+    category: 'RESIDENTIAL',
     location: 'Anantapur',
     year: 'Feb 2025',
     status: 'Ongoing',
@@ -277,7 +282,7 @@ const projectsData = [
   {
     id: 22,
     title: 'Padmavati Apartments',
-    category: 'RESIDENTIAL & APARTMENTS',
+    category: 'RESIDENTIAL',
     location: 'Anantapur',
     year: 'Jun 2024',
     status: 'Ongoing',
@@ -288,7 +293,7 @@ const projectsData = [
   {
     id: 23,
     title: 'Sakaar Luxury Apartments',
-    category: 'RESIDENTIAL & APARTMENTS',
+    category: 'RESIDENTIAL',
     location: 'Anantapur',
     year: 'Mar 2024',
     status: 'Ongoing',
@@ -299,7 +304,7 @@ const projectsData = [
   {
     id: 24,
     title: 'Ashok Apartment Complex',
-    category: 'RESIDENTIAL & APARTMENTS',
+    category: 'RESIDENTIAL',
     location: 'Anantapur',
     year: 'Mar 2026',
     status: 'Ongoing',
@@ -310,7 +315,7 @@ const projectsData = [
   {
     id: 25,
     title: 'Dr. Jeelani Guntakal Apartments',
-    category: 'RESIDENTIAL & APARTMENTS',
+    category: 'RESIDENTIAL',
     location: 'Guntakal',
     year: 'Jun 2026',
     status: 'Ongoing',
@@ -319,11 +324,11 @@ const projectsData = [
     image: imgJeelaniApartments
   },
 
-  // URBAN DESIGN
+  // URBAN DESIGN (Merged into PUBLIC PROJECTS)
   {
     id: 26,
     title: 'Under Ram Nagar Flyover Streetscape',
-    category: 'URBAN DESIGN',
+    category: 'PUBLIC PROJECTS',
     location: 'Anantapur',
     year: 'Mar 2023',
     status: 'Ongoing',
@@ -334,7 +339,7 @@ const projectsData = [
   {
     id: 27,
     title: 'Telugu Thalli Streetscape & Urban Design',
-    category: 'URBAN DESIGN',
+    category: 'PUBLIC PROJECTS',
     location: 'Anantapur',
     year: 'Dec 2024',
     status: 'Ongoing',
@@ -345,7 +350,7 @@ const projectsData = [
   {
     id: 28,
     title: 'JNTU Street Revitalization',
-    category: 'URBAN DESIGN',
+    category: 'PUBLIC PROJECTS',
     location: 'Anantapur',
     year: 'Aug 2023',
     status: 'Ongoing',
@@ -356,7 +361,7 @@ const projectsData = [
   {
     id: 29,
     title: 'Yoga Park & Public Recreation Space',
-    category: 'URBAN DESIGN',
+    category: 'PUBLIC PROJECTS',
     location: 'Anantapur',
     year: 'Jan 2026',
     status: 'Ongoing',
@@ -389,11 +394,11 @@ const projectsData = [
     image: imgRadhaSrinivasHospital
   },
 
-  // HOSPITALITY
+  // HOSPITALITY (Merged into COMMERCIAL & HEALTHCARE)
   {
     id: 32,
     title: 'Boutique City Cafe',
-    category: 'HOSPITALITY',
+    category: 'COMMERCIAL & HEALTHCARE',
     location: 'Anantapur',
     year: 'Mar 2023',
     status: 'Completed',
@@ -402,11 +407,11 @@ const projectsData = [
     image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800'
   },
 
-  // MASTER PLAN
+  // MASTER PLAN (Merged into PUBLIC PROJECTS)
   {
     id: 33,
     title: 'Amrit Bharat Railway Stations Redevelopment Master Plan',
-    category: 'MASTER PLAN',
+    category: 'PUBLIC PROJECTS',
     location: 'South Central Railway Zone',
     year: '2023 - 2026',
     status: 'Ongoing',
@@ -417,7 +422,7 @@ const projectsData = [
   {
     id: 34,
     title: 'Anantapur Urban Master Infrastructure Plan',
-    category: 'MASTER PLAN',
+    category: 'PUBLIC PROJECTS',
     location: 'Anantapur',
     year: '2024 - 2026',
     status: 'Ongoing',
@@ -442,12 +447,9 @@ const projectsData = [
 
 const categories = [
   'ALL',
-  'RESIDENTIAL & APARTMENTS',
+  'RESIDENTIAL',
   'COMMERCIAL & HEALTHCARE',
   'PUBLIC PROJECTS',
-  'URBAN DESIGN',
-  'HOSPITALITY',
-  'MASTER PLAN',
   'INTERIORS'
 ];
 
@@ -469,8 +471,18 @@ const itemVariants = {
 };
 
 const Work = () => {
-  const [selectedCategory, setSelectedCategory] = useState('ALL');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const selectedCategory = searchParams.get('category') || 'ALL';
   const [activeProject, setActiveProject] = useState(null);
+
+  const handleCategorySelect = (cat) => {
+    if (cat === 'ALL') {
+      setSearchParams({}, { replace: true });
+    } else {
+      setSearchParams({ category: cat }, { replace: true });
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const filteredProjects = selectedCategory === 'ALL'
     ? projectsData
@@ -484,33 +496,29 @@ const Work = () => {
       exit={{ opacity: 0, transition: { duration: 0.5 } }}
       style={{ position: 'relative' }}
     >
-      <header className="page-header">
-        <h1 className="text-title">Selected Works ({projectsData.length}+)</h1>
-        
-        {/* Category Filters */}
-        <div className="work-filter-bar">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className={`filter-btn ${selectedCategory === cat ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(cat)}
-            >
-              {cat} {cat === 'ALL' ? `(${projectsData.length})` : `(${projectsData.filter(p => p.category === cat).length})`}
-            </button>
-          ))}
-        </div>
-      </header>
+      {/* Mobile-only Sticky Sub Navigation Bar matching Office page */}
+      <div className="mobile-sub-nav">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            className={`mobile-sub-nav-link ${selectedCategory === cat ? 'active' : ''}`}
+            onClick={() => handleCategorySelect(cat)}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
 
       {/* Projects Grid: Tight spacing between photos */}
-      <motion.div 
-        className="work-grid" 
-        variants={containerVariants} 
+      <motion.div
+        className="work-grid"
+        variants={containerVariants}
         key={selectedCategory}
       >
         {filteredProjects.map((project) => (
-          <motion.div 
-            key={project.id} 
-            className="project-card" 
+          <motion.div
+            key={project.id}
+            className="project-card"
             variants={itemVariants}
             onClick={() => setActiveProject(project)}
           >
@@ -528,33 +536,33 @@ const Work = () => {
       {/* Project Detail Modal */}
       <AnimatePresence>
         {activeProject && (
-          <motion.div 
+          <motion.div
             className="project-modal-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActiveProject(null)}
           >
-            <motion.div 
+            <motion.div
               className="project-modal-box"
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <button 
+              <button
                 className="project-modal-close"
                 onClick={() => setActiveProject(null)}
               >
                 <XIcon size={18} />
               </button>
-              
+
               <img src={activeProject.image} alt={activeProject.title} className="project-modal-img" />
-              
+
               <div className="project-modal-info">
                 <h2>{activeProject.title}</h2>
                 <span className="typology-badge">{activeProject.category}</span>
-                
+
                 <div className="project-meta-grid">
                   <div className="meta-item">
                     <span className="meta-label">Location</span>

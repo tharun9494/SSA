@@ -174,14 +174,15 @@
 /* Secondary Sub-navigation row inside main Header (Desktop) */
 .navbar-sub-nav {
   display: flex;
-  gap: 2rem;
+  gap: clamp(1rem, 1.8vw, 2rem);
   align-items: center;
   margin-top: 0.2rem;
+  white-space: nowrap;
   animation: fadeIn 0.4s ease-out;
 }
 
 .navbar-sub-nav-link {
-  font-size: 1rem;
+  font-size: 0.95rem;
   text-transform: lowercase;
   letter-spacing: 0.05em;
   color: #888888;
@@ -359,8 +360,10 @@
     transition: color 0.3s ease;
   }
   
-  .mobile-drawer-sub-nav-link:hover {
+  .mobile-drawer-sub-nav-link:hover,
+  .mobile-drawer-sub-nav-link.active {
     color: #111111;
+    font-weight: 500;
   }
   
   .navbar.transparent .nav-brand {

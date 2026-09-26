@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useSearchParams } from 'react-router-dom';
 import logoMark from '../../assets/logo-mark.png';
 import './Navbar.css';
+
+const workCategories = [
+  'ALL',
+  'RESIDENTIAL',
+  'COMMERCIAL & HEALTHCARE',
+  'PUBLIC PROJECTS',
+  'INTERIORS'
+];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('about');
   const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,8 +74,20 @@ const Navbar = () => {
 
   const isHomePage = location.pathname === '/';
   const isOfficePage = location.pathname === '/office';
+  const isWorkPage = location.pathname === '/work';
+  const currentWorkCategory = isWorkPage ? (searchParams.get('category') || 'ALL') : 'ALL';
+
+  const handleWorkCategorySelect = (cat) => {
+    if (cat === 'ALL') {
+      setSearchParams({}, { replace: true });
+    } else {
+      setSearchParams({ category: cat }, { replace: true });
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const navClass = (isScrolled || !isHomePage) ? 'solid' : 'transparent';
-  const subnavClass = isOfficePage ? 'has-subnav' : '';
+  const subnavClass = (isOfficePage || isWorkPage) ? 'has-subnav' : '';
 
   return (
     <nav className={`navbar ${navClass} ${subnavClass}`}>
@@ -83,11 +104,30 @@ const Navbar = () => {
             <NavLink to="/work" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
               work
             </NavLink>
+
+            {/* Embedded nested sub-navigation inside mobile drawer for Work */}
+            {isWorkPage && (
+              <div className="mobile-drawer-sub-nav">
+                {workCategories.map(cat => (
+                  <button
+                    key={cat}
+                    className={`mobile-drawer-sub-nav-link ${currentWorkCategory === cat ? 'active' : ''}`}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      handleWorkCategorySelect(cat);
+                    }}
+                  >
+                    — {cat}
+                  </button>
+                ))}
+              </div>
+            )}
+
             <NavLink to="/office" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
               office
             </NavLink>
 
-            {/* Embedded nested sub-navigation inside mobile drawer */}
+            {/* Embedded nested sub-navigation inside mobile drawer for Office */}
             {isOfficePage && (
               <div className="mobile-drawer-sub-nav">
                 {['about', 'people', 'awards', 'publications', 'events'].map(item => (
@@ -120,6 +160,20 @@ const Navbar = () => {
                   onClick={() => scrollToSection(item)}
                 >
                   {item}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {isWorkPage && (
+            <div className="navbar-sub-nav">
+              {workCategories.map(cat => (
+                <button
+                  key={cat}
+                  className={`navbar-sub-nav-link ${currentWorkCategory === cat ? 'active' : ''}`}
+                  onClick={() => handleWorkCategorySelect(cat)}
+                >
+                  {cat}
                 </button>
               ))}
             </div>
