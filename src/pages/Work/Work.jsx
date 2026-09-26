@@ -449,7 +449,7 @@ const Work = () => {
 
   return (
     <motion.div
-      className="container page-container"
+      className="work-page-container"
       initial="hidden"
       animate="visible"
       exit={{ opacity: 0, transition: { duration: 0.5 } }}
