@@ -1,9 +1,9 @@
 /* Page Container & Spacing Optimization */
 .page-container {
-  padding-top: calc(var(--nav-height) + 1rem);
+  padding-top: calc(var(--nav-height) + 1.25rem);
   padding-bottom: var(--spacing-lg);
   min-height: 100vh;
-  max-width: 1600px;
+  max-width: 1750px;
   width: 96%;
   margin: 0 auto;
 }
@@ -68,12 +68,12 @@
 }
 
 /* ==========================================================================
-   Projects Grid: Minimal / Small space between photo and photo (8px gap)
+   Projects Grid: 4 Photos Horizontally Per Row with tight 8px gap
    ========================================================================== */
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px; /* Small space between photo to photo */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px; /* Clean, tight architectural spacing between photos */
   width: 100%;
 }
 
@@ -128,8 +128,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.5rem;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.82) 100%);
+  padding: 1.25rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.85) 100%);
   opacity: 0;
   transition: opacity 0.35s ease;
   z-index: 4;
@@ -151,7 +151,7 @@
 }
 
 .project-overlay .project-title {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 500;
   color: #ffffff;
   letter-spacing: -0.01em;
@@ -284,7 +284,14 @@
 }
 
 /* Responsive Grid */
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
+  .work-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 860px) {
   .work-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 6px;
@@ -300,14 +307,14 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 540px) {
   .work-grid {
     grid-template-columns: 1fr;
     gap: 6px;
   }
   .project-overlay {
     opacity: 1; /* Keep readable on touch devices */
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.75) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.8) 100%);
     padding: 1.2rem;
   }
   .project-overlay .project-category,
