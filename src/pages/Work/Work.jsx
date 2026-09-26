@@ -570,7 +570,7 @@ const Work = () => {
                   </div>
                   {activeProject.area && (
                     <div className="meta-item">
-                      <span className="meta-label">Area</span>
+                      <span className="meta-label">Plot Size</span>
                       <span className="meta-val">{activeProject.area}</span>
                     </div>
                   )}

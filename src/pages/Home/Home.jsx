@@ -36,13 +36,13 @@ const slides = [
   {
     id: 3,
     title: 'CHITTOOR RAILWAY STATION',
-    category: 'Infrastructure & Master Planning',
+    category: 'Railway Station',
     image: imgChittoorStation
   },
   {
     id: 4,
     title: 'DYCE OFFICE',
-    category: 'Railway Engineering & Institutional',
+    category: 'Railway Project',
     image: imgDyceOffice
   },
   {
@@ -54,25 +54,25 @@ const slides = [
   {
     id: 6,
     title: 'FOREST DEPARTMENT OFFICE',
-    category: 'Civic & Institutional',
+    category: 'Office Building',
     image: imgForestOffice
   },
   {
     id: 7,
     title: 'SATYARAM RESIDENCE',
-    category: 'Fluidic Architecture',
+    category: 'Residential Architecture',
     image: imgSatyaram
   },
   {
     id: 8,
     title: 'VIJAY APARTMENTS',
-    category: 'Housing & Multi-Family',
+    category: 'Apartment',
     image: imgVijayApartment
   },
   {
     id: 9,
     title: 'NARROW HOUSE',
-    category: 'Contemporary Architecture',
+    category: 'Residential Architecture',
     image: imgSivaPrasad
   },
   {
@@ -85,7 +85,7 @@ const slides = [
 
 const Home = () => {
   return (
-    <motion.div 
+    <motion.div
       className="home-container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
