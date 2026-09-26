@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  Compass, 
-  Building2, 
-  FileCheck, 
-  Calculator, 
-  Layers, 
-  CheckCircle2, 
+import {
+  Compass,
+  Building2,
+  FileCheck,
+  Calculator,
+  Layers,
+  CheckCircle2,
   ArrowRight,
   ShieldCheck,
   DraftingCompass
@@ -23,8 +23,7 @@ const servicesData = [
     subtitle: 'From concept sketches to high-performance built environments',
     description: 'We believe architecture is born from a sensitive dialogue between people, place, light, and materiality. Our architectural practice handles diverse typologies ranging from custom private residences to multi-tier commercial hubs.',
     deliverables: [
-      'Site analysis, solar orientation & microclimate study',
-      'Conceptual spatial planning & 3D volumetric explorations',
+
       'Photorealistic architectural renderings & virtual walk-throughs',
       'Comprehensive architectural working drawings & construction packages',
       'Integration of natural ventilation, passive cooling & daylighting strategies',
@@ -42,10 +41,8 @@ const servicesData = [
     deliverables: [
       'Gated community & plotted layout master planning',
       'Institutional & educational campus master zoning',
-      'Circulation networks, road hierarchy & vehicular/pedestrian segregation',
-      'Open space, landscape & stormwater retention network planning',
-      'Land capability assessments & phased development strategies',
-      'Detailed development control rules & urban design guidelines'
+      'Open space and landscape design'
+
     ],
     tag: 'Macro Scale'
   },
@@ -58,10 +55,10 @@ const servicesData = [
     description: 'Led by veteran structural engineering leadership, our structural wing delivers robust, cost-effective structural systems that withstand seismic forces, severe soil conditions, and high-load commercial usage.',
     deliverables: [
       'Seismic-resistant Reinforced Concrete (RCC) frame design (IS 1893 / IS 13920)',
-      'Structural steel frames, space trusses & industrial pre-engineered buildings',
+
       'Deep and shallow foundation design based on soil strata geotechnical reports',
       'Detailed structural rebar BBS (Bar Bending Schedules) & construction drawings',
-      'Structural audits, health inspections & rehabilitation/retrofitting design',
+
       'Comprehensive Bill of Quantities (BOQ) & structural steel estimation'
     ],
     tag: 'Engineering Excellence'
@@ -77,9 +74,7 @@ const servicesData = [
       'DTCP (Directorate of Town and Country Planning) layout and building approvals',
       'Municipal Corporation building permission & plan scrutiny submissions',
       'Building bylaws conformity analysis (FAR, setbacks, height restrictions)',
-      'Fire Department NOC documentation and life safety compliance',
-      'Rainwater harvesting & green building compliance verification',
-      'Occupancy Certificate (OC) & Completion Certificate advisory'
+      'Fire Department NOC documentation and life safety compliance'
     ],
     tag: 'Compliance'
   },
@@ -93,10 +88,8 @@ const servicesData = [
     deliverables: [
       'Bank mortgage & loan collateral property valuation reports',
       'Capital gains tax assessments & cost of acquisition indexation',
-      'Valuation for corporate mergers, balance sheet audits & dispute settlement',
-      'Insurance replacement cost valuation & asset depreciation appraisal',
-      'Court litigation, arbitration & family estate settlement documentation',
-      'Due diligence & title land verification surveys'
+      'Valuation for corporate mergers, balance sheet audits & dispute settlement'
+
     ],
     tag: 'Advisory'
   },
@@ -112,7 +105,6 @@ const servicesData = [
       'Custom millwork, cabinetry & architectural joinery drawings',
       'Material palette selection (natural stones, curated timber, architectural metals)',
       'Architectural lighting layouts, luminaire specification & switching schedules',
-      'MEP & HVAC service integration with aesthetic ceilings',
       'Procurement guidance & site fit-out coordination'
     ],
     tag: 'Interiors'
@@ -162,8 +154,8 @@ const Services = () => {
           <span className="services-eyebrow">Professional Consultancy</span>
           <h1 className="services-title">Our Services</h1>
           <p className="services-lead">
-            S.S. Associates is an integrated practice delivering multidisciplinary excellence across 
-            Architecture, Urban Design, Structural Engineering, Government Sanctions, and Asset Valuation. 
+            S.S. Associates is an integrated practice delivering multidisciplinary excellence across
+            Architecture, Urban Design, Structural Engineering, Government Sanctions, and Asset Valuation.
             We transform vision into enduring, functional, and beautifully crafted built reality.
           </p>
         </div>
@@ -176,8 +168,8 @@ const Services = () => {
             {servicesData.map((service, index) => {
               const IconComponent = service.icon;
               return (
-                <motion.article 
-                  key={service.id} 
+                <motion.article
+                  key={service.id}
                   className="service-card"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}

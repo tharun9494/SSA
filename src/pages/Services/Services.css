@@ -136,6 +136,9 @@
   color: #111111;
   margin-bottom: 0.5rem;
   line-height: 1.25;
+  min-height: 3.6rem;
+  display: flex;
+  align-items: flex-start;
 }
 
 .service-card-subtitle {
@@ -144,19 +147,24 @@
   color: var(--color-primary, #a32617);
   margin-bottom: 1.2rem;
   line-height: 1.4;
+  min-height: 2.6rem;
+  display: flex;
+  align-items: flex-start;
 }
 
 .service-card-desc {
   font-size: 0.95rem;
   color: #666666;
   line-height: 1.65;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  min-height: 5.2rem;
 }
 
+/* Lightly visible divider line at the exact same horizontal level across all cards */
 .service-deliverables {
-  margin-top: auto;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  margin-top: 0;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08); /* lightly visible architectural line */
 }
 
 .deliverables-heading {
@@ -345,5 +353,13 @@
   
   .cta-primary-btn, .cta-secondary-btn {
     justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-card-title,
+  .service-card-subtitle,
+  .service-card-desc {
+    min-height: auto;
   }
 }

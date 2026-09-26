@@ -2,6 +2,35 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Work.css';
 
+// Real Project Images from src/assets/COMMERCIAL
+import imgKhammaBhavan from '../../assets/COMMERCIAL/KHAMMA BHAVAN.jpg';
+import imgNandyalFunctionHall from '../../assets/COMMERCIAL/Nandyal functional hall.jpg';
+import imgRameshReddyCommercial from '../../assets/COMMERCIAL/RAMESH REDDY commercial.png';
+import imgShivaPrasadGupta from '../../assets/COMMERCIAL/MR.SHIVA PRASAD GUPTHA.png';
+import imgHemanthamaniClinic from '../../assets/COMMERCIAL/Hemanthamani clinic.png';
+import imgRadhaSrinivasHospital from '../../assets/COMMERCIAL/Radha srinivas hospital(120x60).jpeg';
+
+// Real Project Images from src/assets/RESIDENTIAL
+import imgNarrowHouse from '../../assets/RESIDENTIAL/4NARROW HOUSE.jpg';
+import imgBrothersHouse from '../../assets/RESIDENTIAL/2 brothers house or balaji house.jpg';
+import imgLuxuryVillas from '../../assets/RESIDENTIAL/LUXURY VILLAS.png';
+import imgCurvedElevationVilla from '../../assets/RESIDENTIAL/1 CURVED ELEVATION VILLA.jpeg';
+import imgFluidicFormResidence from '../../assets/RESIDENTIAL/3 FLUIDIC FORM RESIDENCE.jpg';
+import imgCurvilinearResidence from '../../assets/RESIDENTIAL/5 CURVILINEAR RESIDENCE.jpg';
+import imgVijayApartments from '../../assets/RESIDENTIAL/6 vijay apartment.png';
+import imgSakaarLuxury from '../../assets/RESIDENTIAL/SAKAAR LUXURY.jpg';
+import imgJeelaniApartments from '../../assets/RESIDENTIAL/JEELANI APARTMENT.jpeg';
+
+// Real Project Images from src/assets/home_page_images
+import imgChittoorStation from '../../assets/home_page_images/3chittoor railway station.png';
+import imgForestOffice from '../../assets/home_page_images/6 forest office.jpg';
+
+// Real Project Images from src/assets/URBAN_DESIGN
+import imgUnderFlyover from '../../assets/URBAN_DESIGN/UNDER FLYOVER.jpg';
+import imgTeluguThalliStreet from '../../assets/URBAN_DESIGN/TELUGUTALLI STREET.jpg';
+import imgJntuStreet from '../../assets/URBAN_DESIGN/JNTUA STREET.jpg';
+import imgYogaPark from '../../assets/URBAN_DESIGN/YOGA-PARK.png';
+
 const XIcon = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
 );
@@ -17,7 +46,7 @@ const projectsData = [
     status: 'Completed',
     area: '16’5” x 79’',
     client: 'Mr. Siva Prasad',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800'
+    image: imgNarrowHouse
   },
   {
     id: 2,
@@ -28,7 +57,7 @@ const projectsData = [
     status: 'Ongoing',
     area: '60’ x 95’',
     client: 'Sunku Balaji & Dr. Sunku Abhishek',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800'
+    image: imgBrothersHouse
   },
   {
     id: 3,
@@ -39,7 +68,7 @@ const projectsData = [
     status: 'Ongoing',
     area: '60’ x 108’',
     client: 'Dr. Siva Ram Krishna',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800'
+    image: imgLuxuryVillas
   },
   {
     id: 4,
@@ -50,7 +79,7 @@ const projectsData = [
     status: 'Ongoing',
     area: '40’ x 60’',
     client: 'Mr. Srinivas',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800'
+    image: imgCurvedElevationVilla
   },
   {
     id: 5,
@@ -61,7 +90,7 @@ const projectsData = [
     status: 'Ongoing',
     area: '36’ x 85’',
     client: 'Mr. Satayaram',
-    image: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&q=80&w=800'
+    image: imgFluidicFormResidence
   },
   {
     id: 6,
@@ -72,7 +101,7 @@ const projectsData = [
     status: 'Ongoing',
     area: '33’ x 66’',
     client: 'Mr. Murali',
-    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=800'
+    image: imgCurvilinearResidence
   },
   {
     id: 7,
@@ -107,7 +136,7 @@ const projectsData = [
     status: 'Completed',
     area: '71’3” x 36’9”',
     client: 'Khamma Trust',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800'
+    image: imgKhammaBhavan
   },
   {
     id: 10,
@@ -118,7 +147,7 @@ const projectsData = [
     status: 'Completed',
     area: '71’ x 166’8”',
     client: 'Private Client',
-    image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=800'
+    image: imgNandyalFunctionHall
   },
   {
     id: 11,
@@ -140,7 +169,7 @@ const projectsData = [
     status: 'Ongoing',
     area: '80’ x 135’',
     client: 'Mr. Ramesh Reddy',
-    image: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=800'
+    image: imgRameshReddyCommercial
   },
   {
     id: 13,
@@ -151,7 +180,7 @@ const projectsData = [
     status: 'Completed',
     area: '27’ x 65’',
     client: 'Mr. Siva Prasad Gupta',
-    image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800'
+    image: imgShivaPrasadGupta
   },
 
   // PUBLIC PROJECTS
@@ -164,7 +193,7 @@ const projectsData = [
     status: 'Ongoing',
     area: '97’x52’, 64’x54’',
     client: 'Forest Department',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800'
+    image: imgForestOffice
   },
   {
     id: 15,
@@ -186,7 +215,7 @@ const projectsData = [
     status: 'Ongoing',
     area: 'Amrit Bharat Scheme',
     client: 'South Central Railways / Indian Railways',
-    image: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=800'
+    image: imgChittoorStation
   },
   {
     id: 17,
@@ -243,7 +272,7 @@ const projectsData = [
     status: 'Ongoing',
     area: '48’ x 66’',
     client: 'Mr. Vijay',
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800'
+    image: imgVijayApartments
   },
   {
     id: 22,
@@ -265,7 +294,7 @@ const projectsData = [
     status: 'Ongoing',
     area: '112’ x 50’',
     client: 'Mr. Narasimhulu',
-    image: 'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&q=80&w=800'
+    image: imgSakaarLuxury
   },
   {
     id: 24,
@@ -287,7 +316,7 @@ const projectsData = [
     status: 'Ongoing',
     area: '64’ x 340’',
     client: 'Dr. Jeelani',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800'
+    image: imgJeelaniApartments
   },
 
   // URBAN DESIGN
@@ -300,7 +329,7 @@ const projectsData = [
     status: 'Ongoing',
     area: 'Public Urban Corridor',
     client: 'Anantapur Municipal Corporation (AMC)',
-    image: 'https://images.unsplash.com/photo-1519999482648-25049ddd37b1?auto=format&fit=crop&q=80&w=800'
+    image: imgUnderFlyover
   },
   {
     id: 27,
@@ -311,7 +340,7 @@ const projectsData = [
     status: 'Ongoing',
     area: 'Urban Civic Zone',
     client: 'AUDA & AMC',
-    image: 'https://images.unsplash.com/photo-1477959858617-67f30ac4ce78?auto=format&fit=crop&q=80&w=800'
+    image: imgTeluguThalliStreet
   },
   {
     id: 28,
@@ -322,7 +351,7 @@ const projectsData = [
     status: 'Ongoing',
     area: 'Campus Urban Corridor',
     client: 'Anantapur Municipal Corporation',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=800'
+    image: imgJntuStreet
   },
   {
     id: 29,
@@ -333,7 +362,7 @@ const projectsData = [
     status: 'Ongoing',
     area: 'Civic Eco Park',
     client: 'Anantapur Urban Development Authority',
-    image: 'https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&q=80&w=800'
+    image: imgYogaPark
   },
 
   // HEALTH CARE (Merged into COMMERCIAL & HEALTHCARE)
@@ -346,7 +375,7 @@ const projectsData = [
     status: 'Completed',
     area: '50’ x 56’',
     client: 'Dr. Hemanthamani',
-    image: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&q=80&w=800'
+    image: imgHemanthamaniClinic
   },
   {
     id: 31,
@@ -357,7 +386,7 @@ const projectsData = [
     status: 'Ongoing',
     area: '50’ x 120’',
     client: 'Radha Srinivas',
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800'
+    image: imgRadhaSrinivasHospital
   },
 
   // HOSPITALITY
